@@ -1,30 +1,15 @@
 landmarks_list = {
-    "Madison Square Guarden" => {
-      :year_completed => 1901
+    "BQE" => {
+      :year_completed => 1947
     },
-    "The big bull outside" => {
-      :year_completed => 1995
+    "Holland Tunnel" => {
+      :year_completed => -50
     },
-    "Flatiron School" => {
-      :year_completed => 2014
+    "Wall Street Wall" => {
+      :year_completed => 1684
     },
-    "Museum Mile" => {
-      :year_completed => 1058
-    },
-    "Subway Station" => {
-      :year_completed => 2015
-    },
-    "Cast Iron" => {
-      :year_completed => 1951
-    },
-    "Shea Stadium" => {
-      :year_completed => 1964
-    },
-    "Flatiron Building" => {
-      :year_completed => 1902
-    },
-    "Brooklyn Bridge" => {
-      :year_completed => 1883
+    "Brooklyn Battery Tunnel" => {
+      :year_completed => 1973
     }
   }
 
@@ -38,13 +23,25 @@ landmarks_list.each do |name, landmark_hash|
 end
 
 figure_list = {
-    "Billy The Kid" => {
+    "Robert Moses" => {
     },
-    "Mark Zuckerberg" => {
+    "Al Smith" => {
     },
-    "Ada Lovelace" => {
+    "Thedore Roosevelt" => {
     },
-    "Linus Torvalds" => { 
+    "Peter Stuyvesant" => {
+    },
+    "Boss Tweed" => {
+    },
+    "Michael Bloomberg" => {
+    },
+    "Ed Koch" => {
+    },
+    "Fiorello LaGuardia" => {
+    },
+    "Jimmy Walker" => {
+    },
+    "Belle Moskowitz" => {
     }
   }
 
@@ -56,11 +53,13 @@ end
 
 
 title_list = {
-    "The Mayor" => {
+    "Mayor" => {
     },
-    "The Don" => {
+    "President" => {
     },
-    "Mr. President" => {
+    "Governor" => {
+    },
+    "NYC Parks commissioner" => {
     }
   }
 
@@ -69,3 +68,14 @@ title_list.each do |name, figure_hash|
   p.name = name
   p.save
 end
+
+
+Title.find(3).figures << Figure.find(2)
+Title.find(3).figures << Figure.find(3)
+Title.find(2).figures << Figure.find(3)
+Title.find(1).figures << Figure.find(9)
+Title.find(4).figures << Figure.find(1)
+Figure.find(1).landmarks << Landmark.find(1)
+Figure.find(5).landmarks << Landmark.find(2)
+Figure.find(3).landmarks << Landmark.find(3)
+Figure.find(10).landmarks << Landmark.find(4)
